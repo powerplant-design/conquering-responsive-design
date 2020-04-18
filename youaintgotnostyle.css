@@ -1,0 +1,93 @@
+/* To request a range of a variable font axis, join the 2 values with .. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200..900&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  color: whitesmoke;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+h1 {
+  font-size: calc(4vmin + 1rem);
+  line-height: 1.1;
+  font-weight: 200;
+  margin: 0 0 2rem 0;
+  -webkit-animation: variable-font-warp 5s infinite alternate;
+          animation: variable-font-warp 5s infinite alternate;
+  /* font-size: calc(3vw + 1rem); */
+}
+
+@-webkit-keyframes variable-font-warp {
+  0% {
+    font-weight: 800;
+  }
+  100% {
+    font-weight: 400;
+  }
+}
+
+@keyframes variable-font-warp {
+  0% {
+    font-weight: 800;
+  }
+  100% {
+    font-weight: 400;
+  }
+}
+
+.hero {
+  background: -webkit-gradient(linear, left top, left bottom, from(#007991), to(#02b4d8));
+  background: linear-gradient(#007991, #02b4d8);
+  min-height: 70vh;
+  /* padding: 1rem; */
+}
+
+.hero-inner {
+  padding: 12vmin 5rem 2rem 5rem;
+  max-width: 760px;
+}
+
+.button {
+  display: inline-block;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  background: blue;
+  border-radius: 3rem;
+  padding: 1rem 2.2rem;
+  margin-top: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-align: center;
+  line-height: 1.2;
+  -webkit-transition: -webkit-box-shadow 300ms ease;
+  transition: -webkit-box-shadow 300ms ease;
+  transition: box-shadow 300ms ease;
+  transition: box-shadow 300ms ease, -webkit-box-shadow 300ms ease;
+}
+
+.button:hover {
+  -webkit-box-shadow: 0 2px 10px blue;
+          box-shadow: 0 2px 10px blue;
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+  .hero-inner {
+    padding: 2rem 1.6rem;
+  }
+}
+/*# sourceMappingURL=youaintgotnostyle.css.map */
