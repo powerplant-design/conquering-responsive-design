@@ -17,13 +17,11 @@ a {
 }
 
 h1 {
-    // font-size: 3rem;
-    font-size: calc(4vmin + 1rem);
+    font-size: 3rem;
     line-height: 1.1;
     font-weight: 200;
     margin: 0 0 2rem 0;
     animation: variable-font-warp 5s infinite alternate;
-    /* font-size: calc(3vw + 1rem); */
 }
 
 @keyframes variable-font-warp {
@@ -34,40 +32,47 @@ h1 {
 .hero {
     background: linear-gradient( #007991,  #02b4d8 );
     min-height: 70vh;
-    /* padding: 1rem; */
+    padding: 7rem 0;
 }
 
-.hero-inner {
-    padding: 12vmin 5rem 2rem 5rem;
-    max-width: 760px;
+.container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
 }
+
+.hero__text {
+    width: 561%;
+    p {
+        margin-bottom: 3em;
+    }
+}
+
 
 @keyframes button-appear {
     0% { opacity: 0 }
     30% { opacity: 0 }
     100% { opacity: 1}
 }
-.button-dsk {
+.button {
     display: inline-block;
     position: relative;
     text-transform: uppercase;
     font-size: 0.8rem;
     background: blue;
     border-radius: 3rem;
+    font-weight: 600;
+    letter-spacing: 2px;    
+    text-align: center;
+    line-height: 1.2;
+}
+.dsk {
     width: 18rem;
     height: 3rem;
-    margin-top: 3rem;
-    font-weight: 600;
-    letter-spacing: 2px;
     overflow: hidden;
     animation-name: button-appear;
-    // animation-timing-function: 300ms;
-    // transition: translate opacity 300ms;
-    // opacity: 0;
     animation-duration: 900ms;
     animation-iteration-count: 1;
-    // animation-fill-mode: forward;
-    // animation-delay: 1s;
     .text-1, .text-2 {
         transition: all 300ms ease;
         position: absolute;
@@ -93,19 +98,9 @@ h1 {
     }
 }
 
-.button-mbl {
+.mbl {
     display: none;
-    position: relative;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    background: blue;
-    border-radius: 3rem;
-    padding: 1rem 2.2rem;
-    margin-top: 2rem;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-align: center;
-    line-height: 1.2;
+    padding: 1em 2.2em;
     transition: box-shadow 300ms ease;
 }
 
@@ -113,7 +108,6 @@ footer {
     position: fixed;
     bottom: 0;
     right: 0;
-    // transform: translateX(-50%);
     font-size: 0.8rem;
     margin: 1rem 1.6rem;
     a {
@@ -125,20 +119,29 @@ footer {
 }
 
 
-@media (max-width: 700px) {
+@media (max-width: 780px) {
     body {
         font-size: 14px;
     }
 
-    .hero-inner {
-        padding: 2.4rem;
+    .hero {
+        padding: 4rem 0;
+        min-height: auto;
     }
 
-    .button-dsk {
+    .hero__text {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .dsk {
         display: none;
     }
 
-    .button-mbl {
+    .mbl {
         display: inline-block;
     }
 
