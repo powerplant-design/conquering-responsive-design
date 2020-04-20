@@ -1,13 +1,94 @@
 /* To request a range of a variable font axis, join the 2 values with .. */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200..900&display=swap");
-* {
+*, *::before, *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+:root {
+  --dark-blue: #007991;
+  --light-blue: #02b4d8;
+  --dark-grey: #1c1c1c;
+  --light-grey: #969696;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: white;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--dark-blue);
+}
+
+.navbar {
+  z-index: 666;
+  background: var(--dark-grey);
+  position: fixed;
+}
+
+.navbar-nav {
+  height: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-item {
+  width: 100%;
+  -webkit-transition: background 300ms ease;
+  transition: background 300ms ease;
+}
+
+.nav-item:hover {
+  background: #000;
+}
+
+.nav-item:hover .nav-link svg {
+  color: var(--light-blue);
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 5rem;
+  color: var(--light-grey);
+}
+
+.nav-link svg {
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.link-text {
+  display: none;
+  margin-left: 1rem;
+}
+
 body {
   font-family: Inter, sans-serif;
-  color: whitesmoke;
+  color: #1c1c1c;
   margin: 0;
   font-size: 18px;
   line-height: 1.8;
@@ -46,24 +127,30 @@ h1 {
 }
 
 .hero {
-  background: -webkit-gradient(linear, left top, left bottom, from(#007991), to(#02b4d8));
-  background: linear-gradient(#007991, #02b4d8);
+  background: -webkit-gradient(linear, left top, left bottom, from(var(--dark-blue)), to(var(--light-blue)));
+  background: linear-gradient(var(--dark-blue), var(--light-blue));
   min-height: 70vh;
   padding: 7rem 0;
 }
 
 .container {
   margin: 0 auto;
-  width: 80%;
-  max-width: 1200px;
+  width: 60%;
+  max-width: 1000px;
 }
 
 .hero__text {
-  width: 56%;
+  color: whitesmoke;
+  width: 70%;
 }
 
 .hero__text p {
   margin-bottom: 3em;
+}
+
+.body__text {
+  width: 80%;
+  padding: 2rem 0;
 }
 
 @-webkit-keyframes button-appear {
@@ -173,16 +260,75 @@ footer a:hover {
   text-shadow: 0 0 3px blue;
 }
 
+@media (min-width: 780px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+  }
+  .navbar .arrow svg {
+    -webkit-transition: -webkit-transform 300ms ease;
+    transition: -webkit-transform 300ms ease;
+    transition: transform 300ms ease;
+    transition: transform 300ms ease, -webkit-transform 300ms ease;
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  .navbar:hover {
+    width: 25%;
+    -webkit-box-shadow: 0 0 20px var(--dark-grey);
+            box-shadow: 0 0 20px var(--dark-grey);
+  }
+  .navbar:hover .link-text {
+    display: block;
+  }
+  .navbar:hover .arrow svg {
+    -webkit-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+  }
+}
+
 @media (max-width: 780px) {
   body {
     font-size: 14px;
+  }
+  .navbar {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5rem;
+  }
+  .navbar-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .navbar-nav svg {
+    max-height: 2rem;
+  }
+  .nav-link {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .arrow {
+    display: none;
+  }
+  .container {
+    width: 80%;
   }
   .hero {
     padding: 4rem 0;
     min-height: auto;
   }
-  .hero__text {
+  .hero__text, .body__text {
     width: 90%;
+  }
+  .body__text {
+    margin-bottom: 5rem;
   }
   h1 {
     font-size: 2.2rem;
