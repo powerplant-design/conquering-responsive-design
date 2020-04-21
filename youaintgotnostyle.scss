@@ -3,12 +3,20 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+
 :root {
     --dark-blue: #007991;
     --light-blue: #02b4d8;
     --dark-grey: #1c1c1c;
     --light-grey: #969696;
 }
+
+::selection {
+    color: var(--light-grey);
+    background: var(--dark-blue);
+  }
+
+
 body::-webkit-scrollbar {
     width: 0.5rem;
 }
@@ -145,6 +153,7 @@ p {
 }
 
 .button {
+    user-select: none;
     display: inline-block;
     position: relative;
     text-transform: uppercase;
