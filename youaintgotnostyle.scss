@@ -1,8 +1,8 @@
 /* To request a range of a variable font axis, join the 2 values with .. */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@200..900&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; }
-
 
 :root {
     --dark-blue: #007991;
@@ -11,7 +11,7 @@
     --light-grey: #969696;
 }
 
-::selection {
+body::selection {
     color: var(--light-grey);
     background: var(--dark-blue);
   }
@@ -20,9 +20,11 @@
 body::-webkit-scrollbar {
     width: 0.5rem;
 }
+
 body::-webkit-scrollbar-track {
     background: white;
 }
+
 body::-webkit-scrollbar-thumb {
     background: var(--dark-blue);
 }
@@ -34,30 +36,42 @@ body {
     font-size: 16px;
     line-height: 1.8;
 }
+
 a {
     text-decoration: none;
     color: whitesmoke;
 }
 
 h1 {
-    font-size: 3rem;
+    font-family: 'Public Sans', sans-serif;
+    font-size: 3.2rem;
     line-height: 1.1;
     font-weight: 200;
-    margin: 0 0 2rem 0;
-    animation: variable-font-warp 5s infinite alternate;
+    margin: 0 0 2.2rem 0;
+    animation: variable-font-warp 4s infinite alternate;
 }
 
 @keyframes variable-font-warp {
-    0% { font-weight: 800;}
+    0% { font-weight: 900;}
     100% { font-weight: 400;}
 }
 
 h2 {
-    margin: 0.4rem 0;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    line-height: 1.45;
+    margin: 0.8rem 0;
     letter-spacing: 1px;
+    transition: font-weight 500ms ease;
 }
+
 p {
-    margin: 0.4rem 0
+    margin: 0.8rem 0;
+}
+
+img {
+    max-width: 100%;
+    pointer-events: none;
 }
 
 // ? NAVBAR STYLING HERE
@@ -104,46 +118,100 @@ p {
 //     margin-left: 1rem;
 // }
 
-.hero {
-    background: linear-gradient(var(--dark-blue), var(--light-blue));
-    // min-height: 70vh;
-    padding: 7rem 0;
-}
-
 .container {
     margin: 0 auto;
+    padding: 6rem 0;
     width: 80%;
-    max-width: 1000px;
+    max-width: 940px;
 }
 
-.hero__text {
-    color: whitesmoke;
-    width: 65%;
+.hero {
+    background: linear-gradient(var(--dark-blue), var(--light-blue));
+    // padding: 7rem 0;
+
+    &__text {
+        color: whitesmoke;
+        width: 60%;
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 3em;
+        }
+    }
+
+    &__img {
+        align-self: flex-end;
+        width: 40%;
+        mix-blend-mode: screen;
+    }
+
     p {
-        margin-bottom: 3em;
+        max-width: 75%;
     }
 }
 
 .flexbox {
-    // width: 90%;
-    padding: 5rem 0 6rem 0;
     display: flex;
-    text-align: center;
+    justify-content: space-between;
+    
+    &__text {
+        text-align: center;
+        width: 100%;
+
+        &:hover {
+            h2 {
+                font-weight: 900;
+            }
+        }
+    }
 
     &__title--color {
         color: var(--light-blue);
     }
 }
 
-.section--color {
-    background: var(--dark-blue);
-    color: white;
-}
-
 // ?CSS COMBINATOR selects an adjacent sibling with the same class v
 .flexbox__text + .flexbox__text {
     margin-left: 2rem;
 }
+
+.section--color {
+    background: linear-gradient(var(--light-blue), var(--dark-blue));
+    color: white;
+}
+
+// ? DAY 009 STYLES
+
+.flexbox2 {
+    display: flex;
+    justify-content: space-between;
+
+    &__main {
+        width: 50%;
+    }
+
+    &__aside {
+        width: 40%;
+        background: linear-gradient(var(--light-blue), var(--dark-blue));
+        color: white;
+        text-align: center;
+        padding: 2.6rem;
+        box-shadow: 10px 10px 0 blue;
+    }
+
+    &__aside-text {
+        &:hover {
+            h2 {
+                font-weight: 900;
+            }
+        }
+    }
+
+    &__aside-text + &__aside-text {
+        margin-top: 3rem;
+    }
+}
+
+
 
 // ? BUTTON STYLING HERE
 @keyframes button-appear {
@@ -166,7 +234,7 @@ p {
     line-height: 1.2;
 }
 .dsk {
-    width: 18rem;
+    width: 20rem;
     height: 3rem;
     overflow: hidden;
     animation-name: button-appear;
@@ -204,15 +272,22 @@ p {
 
 footer {
     position: fixed;
-    bottom: 0;
+    bottom: 50%;
     right: 0;
+    transform: rotate(-90deg) translateY(450%);
     font-size: 0.8rem;
-    margin: 1rem 1.6rem;
     a {
         color: blue;
+        border-bottom: 1px solid transparent;
+        transition: border 300ms ease;
         &:hover {
-            text-shadow: 0 0 3px blue;
+            border-bottom: 1px solid blue;
         }
+    }
+    .active {
+        pointer-events: none;
+        border-bottom: 1px solid blue;
+
     }
 }
 
@@ -239,7 +314,7 @@ footer {
 //     }
 // }
 
-@media (max-width: 780px) {
+@media (max-width: 840px) {
     body {
         font-size: 14px;
     }
@@ -263,32 +338,55 @@ footer {
     // }
     .container {
         width: 80%;
+        max-width: 400px;
+        padding: 3rem 0;
     }
     .hero {
-        padding: 4rem 0;
+        // padding: 4rem 0;
         min-height: auto;
+
+        &__text {
+            width: 90%;
+
+            p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+        }
+
+        &__img {
+            display: none;
+        }
     }
-    .hero__text {
-        width: 90%;
-    }
+    
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .flexbox {
         flex-direction: column;
-        padding: 3rem 0;
         align-items: flex-start;
-    }
-
-    .flexbox__text {
-        text-align: left;
-        margin: 1rem 0;
+        
+        &__text {
+            // padding: 3rem 0;
+            text-align: left;
+            margin: 1rem 0;
+        }
+        
     }
 
     .flexbox__text + .flexbox__text {
         margin-left: 0;
+    }
+
+    .flexbox2 {
+        flex-direction: column;
+
+        &__main, &__aside {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
     }
 
     .dsk {
@@ -299,4 +397,10 @@ footer {
         display: inline-block;
     }
 
+    footer {
+        position: relative;
+        transform: rotate(0) translateY(0);
+        text-align: center;
+        margin: 0.6rem 0;
+    }
 }
