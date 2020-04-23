@@ -78,6 +78,7 @@ h1 {
 
 h2 {
   font-family: 'Public Sans', sans-serif;
+  font-size: 1.6rem;
   font-weight: 700;
   line-height: 1.45;
   margin: 0.8rem 0;
@@ -93,6 +94,61 @@ p {
 img {
   max-width: 100%;
   pointer-events: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: white;
+  padding: 0.6rem 1rem 0.7rem 1rem;
+  border-bottom: 1px solid blue;
+}
+
+.nav {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 940px;
+}
+
+.nav__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav__main, .nav__subscribe {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.nav__link {
+  font-size: 0.8rem;
+  color: blue;
+  text-transform: uppercase;
+  padding: 0.5rem 0.8rem 0.6rem 0;
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
+}
+
+.nav__link:hover {
+  opacity: 0.7;
+}
+
+.nav__link--button {
+  letter-spacing: 1px;
+  background: blue;
+  color: white;
+  border-radius: 1.4rem;
+  padding: 0.6rem 0.8rem;
+  margin-left: 0.8rem;
 }
 
 .container {
@@ -182,7 +238,7 @@ img {
   background: linear-gradient(var(--light-blue), var(--dark-blue));
   color: white;
   text-align: center;
-  padding: 2.6rem;
+  padding: 2rem 3rem;
   -webkit-box-shadow: 10px 10px 0 blue;
           box-shadow: 10px 10px 0 blue;
 }
@@ -290,8 +346,8 @@ footer {
   position: fixed;
   bottom: 50%;
   right: 0;
-  -webkit-transform: rotate(-90deg) translateY(450%);
-          transform: rotate(-90deg) translateY(450%);
+  -webkit-transform: rotate(-90deg) translateY(400%);
+          transform: rotate(-90deg) translateY(400%);
   font-size: 0.8rem;
 }
 
@@ -315,12 +371,33 @@ footer .active {
   body {
     font-size: 14px;
   }
+  header {
+    padding: 0.3rem 0 0.4rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+  }
+  .nav {
+    width: 80%;
+    max-width: 400px;
+  }
+  .nav__link {
+    font-size: 0.6rem;
+    padding: 0.3rem;
+  }
+  .nav__link--button {
+    margin-left: 0.2rem;
+    padding: 0.4rem;
+  }
   .container {
     width: 80%;
     max-width: 400px;
     padding: 3rem 0;
   }
   .hero {
+    padding-top: 1.4rem;
     min-height: auto;
   }
   .hero__text {
@@ -335,6 +412,10 @@ footer .active {
   }
   h1 {
     font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+    line-height: 1.4;
   }
   .flexbox {
     -webkit-box-orient: vertical;

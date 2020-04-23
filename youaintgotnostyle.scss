@@ -58,6 +58,7 @@ h1 {
 
 h2 {
     font-family: 'Public Sans', sans-serif;
+    font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.45;
     margin: 0.8rem 0;
@@ -74,7 +75,56 @@ img {
     pointer-events: none;
 }
 
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 // ? NAVBAR STYLING HERE
+
+header {
+    background: white;
+    padding: 0.6rem 1rem 0.7rem 1rem;
+    border-bottom: 1px solid blue;
+}
+.nav {
+    margin: 0 auto;
+    // background: var(--dark-blue);
+    width: 80%;
+    max-width: 940px;
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__main, &__subscribe {
+        display: flex;
+    }
+
+    &__link {
+        font-size: 0.8rem;
+        color: blue;
+        text-transform: uppercase;
+        padding: 0.5rem 0.8rem 0.6rem 0;
+        transition: opacity 300ms;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__link--button {
+        letter-spacing: 1px;
+        background: blue;
+        color: white;
+        border-radius: 1.4rem;
+        padding: 0.6rem 0.8rem;
+        margin-left: 0.8rem;
+    }
+}
+
 // .navbar {
 //     z-index: 666;
 //     background: var(--dark-grey);
@@ -127,7 +177,6 @@ img {
 
 .hero {
     background: linear-gradient(var(--dark-blue), var(--light-blue));
-    // padding: 7rem 0;
 
     &__text {
         color: whitesmoke;
@@ -179,8 +228,7 @@ img {
     color: white;
 }
 
-// ? DAY 009 STYLES
-
+// ? CHALLENGE 2 STYLES
 .flexbox2 {
     display: flex;
     justify-content: space-between;
@@ -195,7 +243,7 @@ img {
         background: linear-gradient(var(--light-blue), var(--dark-blue));
         color: white;
         text-align: center;
-        padding: 2.6rem;
+        padding: 2rem 3rem;
         box-shadow: 10px 10px 0 blue;
     }
 
@@ -211,8 +259,6 @@ img {
         margin-top: 3rem;
     }
 }
-
-
 
 // ? BUTTON STYLING HERE
 @keyframes button-appear {
@@ -275,7 +321,7 @@ footer {
     position: fixed;
     bottom: 50%;
     right: 0;
-    transform: rotate(-90deg) translateY(450%);
+    transform: rotate(-90deg) translateY(400%);
     font-size: 0.8rem;
     a {
         color: blue;
@@ -319,6 +365,29 @@ footer {
     body {
         font-size: 14px;
     }
+    header {
+        padding: 0.3rem 0 0.4rem 0;
+        position: fixed;
+        top:0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+    .nav {
+        width: 80%;
+        max-width: 400px;
+
+        &__link {
+            font-size: 0.6rem;
+            padding: 0.3rem;
+    
+        }
+
+        &__link--button {
+            margin-left: 0.2rem;
+            padding: 0.4rem
+        }
+    }
     // .navbar {
     //     left: 0;
     //     bottom: 0;
@@ -343,7 +412,7 @@ footer {
         padding: 3rem 0;
     }
     .hero {
-        // padding: 4rem 0;
+        padding-top: 1.4rem;
         min-height: auto;
 
         &__text {
@@ -363,6 +432,11 @@ footer {
 
     h1 {
         font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+        line-height: 1.4;
     }
 
     .flexbox {
