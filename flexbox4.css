@@ -1,0 +1,253 @@
+/* To request a range of a variable font axis, join the 2 values with .. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@200..900&display=swap");
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --dark-blue: #007991;
+  --light-blue: #02b4d8;
+  --dark-grey: #1c1c1c;
+  --light-grey: #969696;
+  --lighter-grey: #e9e9e9;
+  --green: #d4fbc3;
+  --brown: #54341f;
+}
+
+::-moz-selection {
+  color: var(--dark-grey);
+  background: var(--green);
+}
+
+::selection {
+  color: var(--dark-grey);
+  background: var(--green);
+}
+
+body::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--lighter-grey);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--dark-grey);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: Inter, sans-serif;
+  color: #1c1c1c;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+h1, h2 {
+  font-family: Public Sans, Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+h3 {
+  margin-top: 0.4rem;
+  font-family: Public Sans, Arial, Helvetica, sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--brown);
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.border {
+  border: 8px solid var(--green);
+}
+
+.hero {
+  background-color: var(--green);
+  background-image: url(./img/rzzl-bg.gif);
+  background-blend-mode: screen;
+  min-height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  padding: 0 2rem;
+}
+
+.hero__content {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: calc(8vw + 2rem);
+  font-weight: 800;
+  line-height: 0.85;
+  color: white;
+  text-shadow: 5px 5px 0 var(--green);
+  -webkit-text-stroke: 1px #1c1c1c;
+  margin-bottom: 3rem;
+  -webkit-animation: variable-font-warp 3s infinite alternate;
+          animation: variable-font-warp 3s infinite alternate;
+}
+
+.hero__subtitle {
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  letter-spacing: 3px;
+}
+
+@-webkit-keyframes variable-font-warp {
+  0% {
+    font-weight: 800;
+  }
+  100% {
+    font-weight: 400;
+  }
+}
+
+@keyframes variable-font-warp {
+  0% {
+    font-weight: 800;
+  }
+  100% {
+    font-weight: 400;
+  }
+}
+
+section {
+  padding: 6rem 2rem;
+}
+
+.section--darkbg {
+  background-color: #333;
+  color: #e9e9e9;
+}
+
+.section--lightbg {
+  background-color: var(--green);
+  background-image: url(./img/rzzl-bg.gif);
+  background-blend-mode: screen;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.flexbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flexbox--reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.flexbox__text, .flexbox__img {
+  width: 48%;
+}
+
+footer {
+  position: fixed;
+  bottom: 50%;
+  right: 0;
+  -webkit-transform: rotate(-90deg) translateY(490%);
+          transform: rotate(-90deg) translateY(490%);
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: red;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border 300ms ease;
+  transition: border 300ms ease;
+}
+
+footer a:hover {
+  border-bottom: 1px solid red;
+}
+
+footer .active {
+  pointer-events: none;
+  border-bottom: 1px solid red;
+}
+
+@media (max-width: 840px) {
+  body {
+    font-size: 14px;
+  }
+  h3 {
+    font-size: 1.6rem;
+    text-align: left;
+  }
+  h4 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+  .hero {
+    min-height: 70vh;
+  }
+  .hero__subtitle {
+    font-size: 1.2rem;
+  }
+  section {
+    padding: 2rem 2rem 2.6rem 2rem;
+  }
+  .container {
+    max-width: 420px;
+  }
+  .flexbox, .flexbox--reverse {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .flexbox__text, .flexbox__img, .flexbox--reverse__text, .flexbox--reverse__img {
+    width: 100%;
+  }
+  footer {
+    position: relative;
+    -webkit-transform: rotate(0) translateY(0);
+            transform: rotate(0) translateY(0);
+    text-align: center;
+    margin: 0.6rem 0;
+  }
+}
+/*# sourceMappingURL=flexbox4.css.map */

@@ -9,11 +9,12 @@
     --light-blue: #02b4d8;
     --dark-grey: #1c1c1c;
     --light-grey: #969696;
+    --lighter-grey: #e9e9e9;
 }
 
-body::selection {
-    color: var(--light-grey);
-    background: var(--dark-blue);
+::selection {
+    color: var(--dark-grey);
+    background: var(--light-blue);
   }
 
 
@@ -22,14 +23,17 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-    background: white;
+    background: var(--lighter-grey);
 }
 
 body::-webkit-scrollbar-thumb {
     background: var(--dark-blue);
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body { 
+    scroll-behavior: smooth;
     font-family: Inter, sans-serif;
     color: #1c1c1c;
     margin: 0;
@@ -52,7 +56,7 @@ h1 {
 }
 
 @keyframes variable-font-warp {
-    0% { font-weight: 900;}
+    0% { font-weight: 800;}
     100% { font-weight: 400;}
 }
 
@@ -84,22 +88,38 @@ ul {
 // ? NAVBAR STYLING HERE
 
 header {
-    background: white;
-    padding: 0.6rem 1rem 0.7rem 1rem;
+    z-index: 2000;
+    background: var(--lighter-grey);
+    padding: 0.6rem 0 0.7rem 0;
     border-bottom: 1px solid blue;
-}
-.nav {
-    margin: 0 auto;
-    // background: var(--dark-blue);
-    width: 80%;
-    max-width: 940px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
-    &__list {
+    .header {
         display: flex;
-        justify-content: space-between;
     }
+    .logo {
+        display: flex;
+        align-items: center;
+        max-width: 40px;
+    }
+    
+    svg {
+        width: 100%;
+        color: blue;
+        margin-right: 0.8rem;
+    }
+}
 
-    &__main, &__subscribe {
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+
+    &__list--primary, &__list--secondary {
         display: flex;
     }
 
@@ -111,7 +131,7 @@ header {
         transition: opacity 300ms;
 
         &:hover {
-            opacity: 0.7;
+            opacity: 0.6;
         }
     }
 
@@ -121,7 +141,12 @@ header {
         color: white;
         border-radius: 1.4rem;
         padding: 0.6rem 0.8rem;
-        margin-left: 0.8rem;
+        margin-left: 0.4rem;
+    }
+
+    svg {
+        max-width: 30px;
+        color: blue;
     }
 }
 
@@ -170,9 +195,15 @@ header {
 
 .container {
     margin: 0 auto;
-    padding: 6rem 0;
     width: 80%;
     max-width: 940px;
+}
+
+.padding-vertical {
+    padding: 6rem 0;
+}
+.margin-top {
+    margin-top: 2rem;
 }
 
 .hero {
@@ -321,7 +352,7 @@ footer {
     position: fixed;
     bottom: 50%;
     right: 0;
-    transform: rotate(-90deg) translateY(400%);
+    transform: rotate(-90deg) translateY(490%);
     font-size: 0.8rem;
     a {
         color: blue;
@@ -409,8 +440,12 @@ footer {
     .container {
         width: 80%;
         max-width: 400px;
+    }
+
+    .padding-vertical {
         padding: 3rem 0;
     }
+
     .hero {
         padding-top: 1.4rem;
         min-height: auto;
@@ -436,7 +471,7 @@ footer {
 
     h2 {
         font-size: 1.6rem;
-        line-height: 1.4;
+        line-height: 1.2;
     }
 
     .flexbox {
