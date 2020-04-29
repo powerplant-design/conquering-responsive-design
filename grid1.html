@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="youaintgotnostyle.css">
+    <title>Nesting Grid with Album Layouts!</title>
+</head>
+
+<body>
+
+    <div class="albums">
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=1">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint
+                    doloremque
+                    repellat, iste debitis.</p>
+            </div>
+        </div>
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=2">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">short.</p>
+            </div>
+        </div>
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=3">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint
+                    doloremque
+                    repellat, iste debitis.</p>
+            </div>
+        </div>
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=4">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint
+                    doloremque
+                    repellat, iste debitis.</p>
+            </div>
+        </div>
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=5">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint
+                    doloremque
+                    repellat, iste debitis.</p>
+            </div>
+        </div>
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=6">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint
+                    doloremque
+                    repellat, iste debitis.</p>
+            </div>
+        </div>
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=7">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint
+                    doloremque
+                    repellat, iste debitis.</p>
+            </div>
+        </div>
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=8">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint
+                    doloremque
+                    repellat, iste debitis.</p>
+            </div>
+        </div>
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=9">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint
+                    doloremque
+                    repellat, iste debitis.</p>
+            </div>
+        </div>
+        <div class="album">
+            <img class="album__artwork" src="https://source.unsplash.com/random/300x300?v=10">
+            <div class="album__details">
+                <h2>Album Title</h2>
+                <p class="album__artist">Artist Name</p>
+                <p class="album__desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum sed sint
+                    doloremque
+                    repellat, iste debitis.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <a href="index.html">FLEX1</a> /
+        <a href="flexbox2.html">FLEX2</a> /
+        <a href="flexbox3.html">FLEX3</a> /
+        <a href="flexbox4.html">FLEX4</a> /
+        <a href="grid1.html" class="active">GRID1</a> /
+        <a href="https://rzzldzzl.design">RZZLDZZL.DESIGN</a>
+    </footer>
+
+
+    <style>
+        body {
+            background-image: url("./img/rzzl-bg.gif"), linear-gradient(mistyrose, palevioletred);
+            background-blend-mode: screen;
+            background-attachment: fixed;
+            /* font-size: 10px; */
+            padding: 1.4rem 3rem 1.6rem 1.4rem;
+        }
+
+        .album__artwork {
+            max-width: 100%;
+            /* min-height: 100%; */
+        }
+
+        .albums {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+
+        }
+
+        .album {
+            border: 1px solid palevioletred;
+            background: mistyrose;
+            box-shadow: 5px 5px 0 palevioletred;
+            overflow: hidden;
+            border-radius: 1rem;
+            display: grid;
+            grid-template-columns: minmax(200px, 0.8fr) 1fr;
+            gap: 20px;
+            /* height: 200px; */
+        }
+
+        .album__details {
+            padding: 0.6rem 2rem 0.6rem 0;
+            align-self: center;
+            justify-self: start;
+        }
+
+        .album__details h2 {
+            font-size: 1.6rem;
+            font-family: 'VT323', monospace;
+            margin-bottom: 0.4rem;
+        }
+
+        .album__details p {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
+    </style>
+</body>
+
+</html>

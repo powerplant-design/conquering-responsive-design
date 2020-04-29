@@ -188,8 +188,8 @@ footer {
   position: fixed;
   bottom: 50%;
   right: 0;
-  -webkit-transform: rotate(-90deg) translateY(490%);
-          transform: rotate(-90deg) translateY(490%);
+  -webkit-transform: rotate(-90deg) translateY(720%);
+          transform: rotate(-90deg) translateY(720%);
   font-size: 0.8rem;
 }
 
